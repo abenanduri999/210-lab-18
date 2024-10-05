@@ -111,6 +111,7 @@ Node * addToHead ( Node * head)
 Node * addToTail(Node * head) 
 {
     Node * newNode = new Node; 
+    newNode->next = nullptr; 
     double value; 
     string rev; 
     cout<<"Enter review rating (0 - 5): "; 
@@ -122,7 +123,6 @@ Node * addToTail(Node * head)
     if(!head) 
     {
         head = newNode; 
-        newNode->next = nullptr; 
         newNode->data = value; 
         newNode->review = rev; 
     }
@@ -130,21 +130,23 @@ Node * addToTail(Node * head)
     else
     {
         Node * current = head; 
-        while(current->next != nullptr)
+        while(current->next)
             {
                 current = current->next; 
             }
+        newNode->data = value; 
+        newNode->review = rev;   
         current->next = newNode; 
         newNode->next = nullptr;    
     }
-
-    return head; 
-
+return head; 
 }
 
 void output (Node * head) 
 {
-     int count = 1;
+    double average; 
+    double sum = 0;
+    int count = 1;
     Node * current = head; 
     if(!head)
     {
@@ -153,7 +155,8 @@ void output (Node * head)
     while(current != nullptr)
     {
         cout<<"Review #"<<count++<<": "<<current->data<<": "<<current->review<<endl;
-        current = current->next; 
+        current = current->next;  
         cout<<endl; 
     }
+        
 }
