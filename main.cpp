@@ -37,6 +37,18 @@ int main() {
         cout<<"Invalid Input."<<endl; 
     }
 
+    int count = 1;
+    Node * current = head; 
+    if(!head)
+    {
+        cout<<"empty list"<<endl; 
+    }
+    while(current != nullptr)
+    {
+        cout<<"Review #"<<count++<<": "<<current->data<<": "<<current->review<<endl;
+        current = current->next; 
+    }
+
     return 0; 
 }
 
@@ -66,9 +78,9 @@ Node * addToHead ( Node * head)
         head = newNode; 
     }
 
-    char choice;
+   // char choice;
         
-    cout<<"Enter another review? (y/n) "; 
+   // cout<<"Enter another review? (y/n) "; 
    
   /*  while(cin>>choice) 
     {
@@ -79,8 +91,8 @@ Node * addToHead ( Node * head)
         } 
     else if(choice = 'n')
         break; 
-    } 
-        return head; */ 
+    } */
+        return head;  
 } 
 
 Node * addToTail(Node * head) 
