@@ -45,7 +45,7 @@ Node * addToHead ( Node * head)
     Node * newNode = new Node; 
     double value; 
     string rev; 
-    cout<<"Enter review rating (0 -5): "; 
+    cout<<"Enter review rating (0 - 5): "; 
     cin>>value; 
     cin.ignore(); 
     cout<<"Enter a review: "; 
@@ -68,21 +68,17 @@ Node * addToHead ( Node * head)
 
     char choice;
         
-    cout<<"Enter another review? (y/n)"; 
-    cin>>choice; 
+    cout<<"Enter another review? (y/n) "; 
+   
+  /*  while(cin>>choice) 
+    {
 
     if(choice = 'y') 
-    {
-        do 
         {
-            head = addToHead(head); 
-            cout<<"Enter another review? (y/n)"; 
-            cin>>choice;
-        }
-        while (choice = 'y');
-    }
-    
-    else
-        return head; 
-
+             head = addToHead(head);         
+        } 
+    else if(choice = 'n')
+        break; 
+    } 
+        return head; */ 
 } 
