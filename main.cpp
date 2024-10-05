@@ -30,14 +30,14 @@ int main() {
     }    
     else if(answer == 2)
     {
-
+        head = addToTail(head); 
     }
     else 
     {
         cout<<"Invalid Input."<<endl; 
     }
 
-
+    return 0; 
 }
 
 Node * addToHead ( Node * head)
@@ -82,3 +82,37 @@ Node * addToHead ( Node * head)
     } 
         return head; */ 
 } 
+
+Node * addToTail(Node * head) 
+{
+    Node * newNode = new Node; 
+    double value; 
+    string rev; 
+    cout<<"Enter review rating (0 - 5): "; 
+    cin>>value; 
+    cin.ignore(); 
+    cout<<"Enter a review: "; 
+    getline(cin, rev); 
+
+    if(!head) 
+    {
+        head = newNode; 
+        newNode->next = nullptr; 
+        newNode->data = value; 
+        newNode->review = rev; 
+    }
+
+    else
+    {
+        Node * current = head; 
+        while(current->next != nullptr)
+            {
+                current = current->next; 
+            }
+        current->next = newNode; 
+        newNode->next = nullptr;    
+    }
+
+    return head; 
+
+}
