@@ -66,6 +66,18 @@ Node * addToHead ( Node * head)
         head = newNode; 
     }
 
+    char choice;
+    do
+    {
+        
+        cout<<"Enter another review? (y/n)"; 
+        cin>>choice; 
+    }
+    while(choice == 'y');
+    {
+        head = addToHead(head); 
+    }
+    
     return head; 
 
 } 
