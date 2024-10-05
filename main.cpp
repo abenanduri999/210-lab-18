@@ -146,17 +146,20 @@ void output (Node * head)
 {
     double average; 
     double sum = 0;
-    int count = 1;
+    int count = 0;
     Node * current = head; 
     if(!head)
     {
         cout<<"empty list"<<endl; 
     }
+    cout<<"Outputting all Reviews: "<<endl; 
     while(current != nullptr)
     {
-        cout<<"Review #"<<count++<<": "<<current->data<<": "<<current->review<<endl;
-        current = current->next;  
-        cout<<endl; 
+        cout<<"\t"<<"Review #"<<count + 1<<": "<<current->data<<": "<<current->review<<endl;
+        sum = current->data + sum; 
+        current = current->next; 
+        count++;  
     }
-        
+        average = sum/count; 
+        cout<<"\t"<<"Average: "<<average<<endl; 
 }
