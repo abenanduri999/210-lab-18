@@ -50,6 +50,25 @@ int main() {
     else if(answer == 2)
     {
         head = addToTail(head); 
+        char choice2; 
+
+        do
+        {
+            cout<<"Enter another review? (y/n) ";
+            cin>>choice2; 
+
+            switch(choice2)
+                {
+                    case 'y': 
+                        head = addToTail(head); 
+                        break;
+                    
+                    case 'n': 
+                        output(head); 
+                        return 0; 
+                }
+        }while (choice2 = 'y'); 
+
     }
     else 
     {
