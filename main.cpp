@@ -26,7 +26,7 @@ int main() {
 
     if (answer == 1)
     {
-
+        head = addToHead(head); 
     }    
     else if(answer == 2)
     {
@@ -42,7 +42,7 @@ int main() {
 
 Node * addToHead ( Node * head)
 {
-    Node * newNode; 
+    Node * newNode = new Node; 
     double value; 
     string rev; 
     cout<<"Enter review rating (0 -5): "; 
@@ -51,7 +51,21 @@ Node * addToHead ( Node * head)
     cout<<"Enter a review: "; 
     getline(cin, rev); 
 
-    if
+    if(!head) 
+    {
+        head = newNode; 
+        newNode->next = nullptr; 
+        newNode->data = value; 
+        newNode->review = rev; 
+    }
+    else 
+    {
+        newNode->next=head; 
+        newNode->data = value; 
+        newNode->review = rev;
+        head = newNode; 
+    }
 
+    return head; 
 
 } 
