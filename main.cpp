@@ -27,6 +27,15 @@ int main() {
     if (answer == 1)
     {
         head = addToHead(head); 
+        
+        char choice;
+        cout<<"Enter another review? (y/n) ";
+        cin>>choice; 
+        if(choice = 'y')
+        {
+            
+        }
+
     }    
     else if(answer == 2)
     {
@@ -47,6 +56,7 @@ int main() {
     {
         cout<<"Review #"<<count++<<": "<<current->data<<": "<<current->review<<endl;
         current = current->next; 
+        cout<<endl; 
     }
 
     return 0; 
