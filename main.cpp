@@ -13,6 +13,7 @@ struct Node
 
 Node * addToHead(Node *); 
 Node * addToTail(Node *); 
+void output (Node * ); 
 
 int main() {
 
@@ -29,14 +30,23 @@ int main() {
         head = addToHead(head); 
         
         char choice;
-        cout<<"Enter another review? (y/n) ";
-        cin>>choice; 
-        if(choice = 'y')
+        do
         {
+            cout<<"Enter another review? (y/n) ";
+            cin >>choice; 
             
-        }
-
+            switch (choice)
+            {
+                case 'y': 
+                    head = addToHead(head); 
+                    break;
+                case 'n': 
+                    output(head); 
+                    return 0; 
+            }
+        } while(choice = 'y'); 
     }    
+
     else if(answer == 2)
     {
         head = addToTail(head); 
@@ -46,18 +56,7 @@ int main() {
         cout<<"Invalid Input."<<endl; 
     }
 
-    int count = 1;
-    Node * current = head; 
-    if(!head)
-    {
-        cout<<"empty list"<<endl; 
-    }
-    while(current != nullptr)
-    {
-        cout<<"Review #"<<count++<<": "<<current->data<<": "<<current->review<<endl;
-        current = current->next; 
-        cout<<endl; 
-    }
+   
 
     return 0; 
 }
@@ -87,21 +86,6 @@ Node * addToHead ( Node * head)
         newNode->review = rev;
         head = newNode; 
     }
-
-   // char choice;
-        
-   // cout<<"Enter another review? (y/n) "; 
-   
-  /*  while(cin>>choice) 
-    {
-
-    if(choice = 'y') 
-        {
-             head = addToHead(head);         
-        } 
-    else if(choice = 'n')
-        break; 
-    } */
         return head;  
 } 
 
@@ -137,4 +121,20 @@ Node * addToTail(Node * head)
 
     return head; 
 
+}
+
+void output (Node * head) 
+{
+     int count = 1;
+    Node * current = head; 
+    if(!head)
+    {
+        cout<<"empty list"<<endl; 
+    }
+    while(current != nullptr)
+    {
+        cout<<"Review #"<<count++<<": "<<current->data<<": "<<current->review<<endl;
+        current = current->next; 
+        cout<<endl; 
+    }
 }
