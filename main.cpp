@@ -67,17 +67,22 @@ Node * addToHead ( Node * head)
     }
 
     char choice;
-    do
-    {
         
-        cout<<"Enter another review? (y/n)"; 
-        cin>>choice; 
-    }
-    while(choice == 'y');
+    cout<<"Enter another review? (y/n)"; 
+    cin>>choice; 
+
+    if(choice = 'y') 
     {
-        head = addToHead(head); 
+        do 
+        {
+            head = addToHead(head); 
+            cout<<"Enter another review? (y/n)"; 
+            cin>>choice;
+        }
+        while (choice = 'y');
     }
     
-    return head; 
+    else
+        return head; 
 
 } 
